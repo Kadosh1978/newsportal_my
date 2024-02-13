@@ -56,7 +56,7 @@ class Post(models.Model):
         return f'{self.text[:124]}...'
     
     def __str__(self):
-        return f'{self.head.title()}'
+        return f'{self.time_in}:  {self.head.title()}'
     
 
 
