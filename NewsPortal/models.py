@@ -56,7 +56,7 @@ class Post(models.Model):
         return f'{self.text[:124]}...'
     
     def __str__(self):
-        return f'{self.head.title()}: {self.time_in}: {self.text}'
+        return f'Заголовок: {self.head.title()}: Дата публикации: {self.time_in}: Текст статьи:{self.text}'
     
 
 

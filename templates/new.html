@@ -1,5 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 <!-- Название у нас будет Product -->
 {% block title %}
 News
@@ -7,5 +9,26 @@ News
 
 <!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
 {% block content %}
-<h1>{{ new }}</h1>
+
+<h1>Новость</h1>
+<table>
+    <tr>
+        <td><b>Время</b></td>
+        <td><b>Заголовок</b></td>
+        <td><b>Статья</b></td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>{{ new.time_in|date:'d M Y' }}</td>
+        <td>{{ new.head }}</td>
+        <td>{{ new.text|censor }}</td>
+
+    </tr>
+
+
+</table>
+
 {% endblock content %}
